@@ -1,0 +1,94 @@
+{
+ "etiqueta": "original",
+ "fecha": "2026-11-24T23:40:13.937Z",
+ "resultados": [
+  {
+   "criterio": "Eficiencia de desempeño · comportamiento temporal (carga local)",
+   "pasa": true,
+   "detalle": "DOMContentLoaded=67 ms, load=67 ms"
+  },
+  {
+   "criterio": "Eficiencia de desempeño · utilización de recursos",
+   "pasa": true,
+   "detalle": "98.9 KB en 4 archivos; sin bibliotecas externas"
+  },
+  {
+   "criterio": "Accesibilidad automática (axe-core, WCAG 2.2 A/AA) · panel",
+   "pasa": true,
+   "detalle": "sin infracciones"
+  },
+  {
+   "criterio": "Capacidad de interacción · operabilidad con teclado",
+   "pasa": true,
+   "detalle": "foco inicial en \"#main\"; primer Tab: \"+ Nueva venta\""
+  },
+  {
+   "criterio": "Capacidad de interacción · autodescriptividad (sin jerga técnica en pantalla)",
+   "pasa": false,
+   "detalle": "6 subtítulos muestran códigos de requisitos: \"RF-002 a RF-004, RF-008 y RF-009 · Proceso P01\""
+  },
+  {
+   "criterio": "Capacidad de interacción · legibilidad del mapa de asientos",
+   "pasa": false,
+   "detalle": "texto secundario del asiento = 9.9 px"
+  },
+  {
+   "criterio": "Capacidad de interacción · inclusividad (estado no depende solo del color)",
+   "pasa": false,
+   "detalle": "ocupado y reservado se distinguen solo por color"
+  },
+  {
+   "criterio": "Capacidad de interacción · protección contra errores del usuario (venta en curso)",
+   "pasa": true,
+   "detalle": "al volver: paso 3, nombre \"Prueba\""
+  },
+  {
+   "criterio": "Adecuación funcional · corrección (validación de datos obligatorios)",
+   "pasa": true,
+   "detalle": "4 mensajes de error; foco en \"pNumDoc\""
+  },
+  {
+   "criterio": "Accesibilidad automática (axe-core, WCAG 2.2 A/AA) · formulario de pasajero con errores",
+   "pasa": true,
+   "detalle": "sin infracciones"
+  },
+  {
+   "criterio": "Seguridad · autenticidad y control de acceso (cambio de rol)",
+   "pasa": false,
+   "detalle": "cualquier usuario puede cambiar a Jefe de agencia desde el encabezado"
+  },
+  {
+   "criterio": "Fiabilidad · tolerancia a fallos (falla simulada de conexión)",
+   "pasa": true,
+   "detalle": "mensaje de error con opción de reintento"
+  },
+  {
+   "criterio": "Fiabilidad · ausencia de fallos (errores de JavaScript)",
+   "pasa": true,
+   "detalle": "0 errores en consola"
+  },
+  {
+   "criterio": "Flexibilidad · adaptabilidad (sin desbordamiento horizontal en 390 px)",
+   "pasa": true,
+   "detalle": "scrollWidth=390"
+  },
+  {
+   "criterio": "Capacidad de interacción · objetivos táctiles ≥ 24 px (WCAG 2.2, 2.5.8)",
+   "pasa": false,
+   "detalle": "chkFalla 22x22"
+  },
+  {
+   "criterio": "Accesibilidad automática (axe-core, WCAG 2.2 A/AA) · móvil · mapa de asientos",
+   "pasa": false,
+   "detalle": "[{\"id\":\"aria-valid-attr-value\",\"impacto\":\"critical\",\"nodos\":40}]"
+  }
+ ],
+ "desempeno": {
+  "dcl": 67,
+  "load": 67,
+  "bytes": 101318,
+  "recursos": 4
+ },
+ "tiempo_total_ms": 76,
+ "resumen": "10 de 16 criterios cumplidos"
+}

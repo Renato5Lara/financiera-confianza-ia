@@ -1,0 +1,51 @@
+{
+ "n": 99,
+ "exactitud": 0.636,
+ "f1_macro": 0.616,
+ "kappa_cohen": 0.409,
+ "por_clase": {
+  "NEG": {
+   "precision": 0.475,
+   "recall": 0.826,
+   "f1-score": 0.603,
+   "support": 23.0
+  },
+  "NEU": {
+   "precision": 0.9,
+   "recall": 0.537,
+   "f1-score": 0.673,
+   "support": 67.0
+  },
+  "POS": {
+   "precision": 0.421,
+   "recall": 0.889,
+   "f1-score": 0.571,
+   "support": 9.0
+  }
+ },
+ "matriz_confusion_filas_manual_columnas_modelo": {
+  "orden": [
+   "NEG",
+   "NEU",
+   "POS"
+  ],
+  "valores": [
+   [
+    19,
+    4,
+    0
+   ],
+   [
+    20,
+    36,
+    11
+   ],
+   [
+    1,
+    0,
+    8
+   ]
+  ]
+ },
+ "nota": "Muestra estratificada por clase PREDICHA (40/40/19): no estima la exactitud sobre todo el corpus."
+}

@@ -1,0 +1,10 @@
+Regresión logística: AUC-CV=0.764±0.022 | prueba: AUC=0.800 Acc=0.528 Prec=0.380 Rec=0.907 F1=0.535 umbral=0.13 costo=146
+Random Forest: AUC-CV=0.788±0.012 | prueba: AUC=0.791 Acc=0.564 Prec=0.398 Rec=0.880 F1=0.548 umbral=0.21 costo=145
+Gradient Boosting: AUC-CV=0.772±0.021 | prueba: AUC=0.789 Acc=0.548 Prec=0.391 Rec=0.907 F1=0.546 umbral=0.11 costo=141
+Modelo con mayor AUC en validación cruzada: Random Forest
+Equidad por edad:
+                n  tasa_pred_incumple  tasa_real_incumple
+grupo                                                   
+25 o más     202               0.634               0.248
+menor de 25   48               0.792               0.521
+Isolation Forest: {'alertas_prueba': 6, 'tasa_incumplimiento_en_alertas': 0.16666666666666666, 'tasa_incumplimiento_global': 0.3}

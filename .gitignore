@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+node_modules/
+# Textos de publicaciones de terceros: no se redistribuyen
+analisis_electoral/data/*.jsonl
+analisis_electoral/data/posts_limpios.parquet
+analisis_electoral/data/posts_sentimiento.parquet
+analisis_electoral/data/muestra_validacion_textos.csv

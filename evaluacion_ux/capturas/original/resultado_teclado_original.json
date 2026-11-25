@@ -1,0 +1,66 @@
+{
+ "etiqueta": "original",
+ "fecha": "2026-11-25T00:25:46.446Z",
+ "pruebas": [
+  {
+   "id": "T1",
+   "prueba": "Navegación con Tab (40 pulsaciones desde la carga)",
+   "pasa": true,
+   "detalle": "foco inicial main#main \"Panel de ventas martes, 24 de \"; 37 paradas en 14 elementos distintos; 3 salidas al navegador al completar el ciclo; 0 paradas invisibles; sin trampa de foco"
+  },
+  {
+   "id": "T2",
+   "prueba": "Foco visible en cada parada de Tab",
+   "pasa": true,
+   "detalle": "las 37 paradas muestran contorno de foco (solid 3px)"
+  },
+  {
+   "id": "T3",
+   "prueba": "Navegación inversa con Shift+Tab",
+   "pasa": true,
+   "detalle": "10 pulsaciones devuelven exactamente las paradas previas en orden inverso"
+  },
+  {
+   "id": "T4",
+   "prueba": "Enter en \"Saltar al contenido principal\"",
+   "pasa": true,
+   "detalle": "enlace alcanzado con 11 Shift+Tab: a \"Saltar al contenido principal\"; tras Enter: main#main \"Panel de ventas martes, 24 de \""
+  },
+  {
+   "id": "T5",
+   "prueba": "Enter en el enlace \"Vender pasaje\" del menú",
+   "pasa": true,
+   "detalle": "alcanzado con 7 Shift+Tab; vista de venta visible: true"
+  },
+  {
+   "id": "T6",
+   "prueba": "Búsqueda y elección de viaje solo con teclado (flechas y Enter)",
+   "pasa": true,
+   "detalle": "origen/destino \"TRU1 / LIM1\"; 2 viajes encontrados; paso visible tras Enter: 2"
+  },
+  {
+   "id": "T7",
+   "prueba": "Espacio activa el botón de asiento",
+   "pasa": true,
+   "detalle": "button \"Asiento 1, cama, ventana, S/ 9\": aria-pressed=\"true\" tras Espacio"
+  },
+  {
+   "id": "T8",
+   "prueba": "Enter en \"Continuar\" y escritura en el formulario",
+   "pasa": true,
+   "detalle": "paso visible: 3; campo de nombres alcanzado: true"
+  },
+  {
+   "id": "T9",
+   "prueba": "Cambio de vista (Venta a Boletos a Venta) solo con teclado",
+   "pasa": true,
+   "detalle": "vista Boletos mostrada: true; al volver: paso 3, nombre \"Prueba Teclado\", asiento 1Cama (antes 1Cama)"
+  },
+  {
+   "id": "T10",
+   "prueba": "Recarga o cierre con una venta en curso",
+   "pasa": false,
+   "detalle": "advertencia antes de salir: no; tras recargar: paso 1, nombre \"\""
+  }
+ ]
+}

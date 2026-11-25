@@ -1,0 +1,51 @@
+Entrenamiento=1149 | Validación=288 | Prueba=360
+Parámetros entrenables: 38282
+Época  1: pérdida ent=2.2273 val=2.0328 | exactitud ent=0.200 val=0.538
+Época  2: pérdida ent=1.5840 val=0.8654 | exactitud ent=0.594 val=0.875
+Época  3: pérdida ent=0.7727 val=0.3959 | exactitud ent=0.756 val=0.910
+Época  4: pérdida ent=0.4992 val=0.2427 | exactitud ent=0.842 val=0.944
+Época  5: pérdida ent=0.3944 val=0.2041 | exactitud ent=0.867 val=0.941
+Época  6: pérdida ent=0.3087 val=0.1626 | exactitud ent=0.900 val=0.962
+Época  7: pérdida ent=0.2578 val=0.1298 | exactitud ent=0.927 val=0.962
+Época  8: pérdida ent=0.2041 val=0.1108 | exactitud ent=0.943 val=0.972
+Época  9: pérdida ent=0.2041 val=0.1126 | exactitud ent=0.930 val=0.972
+Época 10: pérdida ent=0.1654 val=0.0834 | exactitud ent=0.952 val=0.986
+Época 11: pérdida ent=0.1581 val=0.0794 | exactitud ent=0.945 val=0.986
+Época 12: pérdida ent=0.1251 val=0.0853 | exactitud ent=0.964 val=0.983
+Época 13: pérdida ent=0.1216 val=0.0715 | exactitud ent=0.963 val=0.983
+Época 14: pérdida ent=0.1048 val=0.0655 | exactitud ent=0.970 val=0.986
+Época 15: pérdida ent=0.1130 val=0.0683 | exactitud ent=0.963 val=0.986
+Época 16: pérdida ent=0.1028 val=0.0605 | exactitud ent=0.967 val=0.986
+Época 17: pérdida ent=0.0885 val=0.0603 | exactitud ent=0.969 val=0.983
+Época 18: pérdida ent=0.0738 val=0.0480 | exactitud ent=0.978 val=0.986
+Época 19: pérdida ent=0.0735 val=0.0479 | exactitud ent=0.974 val=0.983
+Época 20: pérdida ent=0.0795 val=0.0498 | exactitud ent=0.977 val=0.986
+Época 21: pérdida ent=0.0627 val=0.0487 | exactitud ent=0.981 val=0.990
+Época 22: pérdida ent=0.0509 val=0.0394 | exactitud ent=0.988 val=0.990
+Época 23: pérdida ent=0.0571 val=0.0463 | exactitud ent=0.982 val=0.990
+Época 24: pérdida ent=0.0679 val=0.0467 | exactitud ent=0.979 val=0.986
+Época 25: pérdida ent=0.0595 val=0.0425 | exactitud ent=0.980 val=0.990
+Época 26: pérdida ent=0.0456 val=0.0320 | exactitud ent=0.988 val=0.993
+Época 27: pérdida ent=0.0424 val=0.0391 | exactitud ent=0.990 val=0.986
+Época 28: pérdida ent=0.0396 val=0.0429 | exactitud ent=0.989 val=0.983
+Época 29: pérdida ent=0.0410 val=0.0363 | exactitud ent=0.987 val=0.990
+Época 30: pérdida ent=0.0451 val=0.0350 | exactitud ent=0.987 val=0.990
+Tiempo de entrenamiento: 3.0 s
+Exactitud en prueba: 0.9833
+              precision    recall  f1-score   support
+
+           0      1.000     0.972     0.986        36
+           1      0.946     0.972     0.959        36
+           2      1.000     1.000     1.000        35
+           3      1.000     1.000     1.000        37
+           4      0.973     1.000     0.986        36
+           5      1.000     1.000     1.000        37
+           6      1.000     0.972     0.986        36
+           7      0.973     1.000     0.986        36
+           8      0.941     0.914     0.928        35
+           9      1.000     1.000     1.000        36
+
+    accuracy                          0.983       360
+   macro avg      0.983     0.983     0.983       360
+weighted avg      0.983     0.983     0.983       360
+

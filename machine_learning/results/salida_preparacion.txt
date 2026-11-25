@@ -1,0 +1,3 @@
+Registros: 1000 | Variables usadas: 17 | Categóricas: 11 | Numéricas: 6
+Valores faltantes: 0 | Duplicados: 0
+Tasa de incumplimiento: 0.3

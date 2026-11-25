@@ -1,0 +1,17 @@
+PASA  · Eficiencia de desempeño · comportamiento temporal (carga local) · DOMContentLoaded=71 ms, load=71 ms
+PASA  · Eficiencia de desempeño · utilización de recursos · 100.0 KB en 4 archivos; sin bibliotecas externas
+PASA  · Accesibilidad automática (axe-core, WCAG 2.2 A/AA) · panel · sin infracciones
+PASA  · Capacidad de interacción · operabilidad con teclado · foco inicial en "#main"; primer Tab: "+ Nueva venta"
+PASA  · Capacidad de interacción · autodescriptividad (sin jerga técnica en pantalla) · subtítulos orientados a la tarea
+PASA  · Capacidad de interacción · legibilidad del mapa de asientos · texto secundario del asiento = 12.0 px
+PASA  · Capacidad de interacción · inclusividad (estado no depende solo del color) · ocupados/reservados con textura además del color
+PASA  · Capacidad de interacción · protección contra errores del usuario (venta en curso) · al volver: paso 3, nombre "Prueba"
+PASA  · Adecuación funcional · corrección (validación de datos obligatorios) · 4 mensajes de error; foco en "pNumDoc"
+PASA  · Accesibilidad automática (axe-core, WCAG 2.2 A/AA) · formulario de pasajero con errores · sin infracciones
+PASA  · Seguridad · autenticidad y control de acceso (cambio de rol) · selector marcado como modo demostración
+PASA  · Fiabilidad · tolerancia a fallos (falla simulada de conexión) · mensaje de error con opción de reintento
+PASA  · Fiabilidad · ausencia de fallos (errores de JavaScript) · 0 errores en consola
+PASA  · Flexibilidad · adaptabilidad (sin desbordamiento horizontal en 390 px) · scrollWidth=390
+PASA  · Capacidad de interacción · objetivos táctiles ≥ 24 px (WCAG 2.2, 2.5.8) · todos los controles visibles miden al menos 24 × 24 px
+PASA  · Accesibilidad automática (axe-core, WCAG 2.2 A/AA) · móvil · mapa de asientos · sin infracciones
+16 de 16 criterios cumplidos

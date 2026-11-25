@@ -1,0 +1,18 @@
+{
+ "brutos": 4530,
+ "tras_dedup_uri": 2423,
+ "en_periodo": 2423,
+ "spam_corto": 215,
+ "texto_repetido_misma_cuenta": 137,
+ "no_espanol": 272,
+ "irrelevantes": 722,
+ "validos": 1608,
+ "autores_unicos": 395,
+ "menciones_por_candidato": {
+  "Keiko Fujimori (Fuerza Popular)": 803,
+  "Roberto Sánchez (Juntos por el Perú)": 374,
+  "Rafael López Aliaga (Renovación Popular)": 169
+ },
+ "publicaciones_por_cuenta_p95": 14.299999999999955,
+ "max_publicaciones_una_cuenta": 315
+}

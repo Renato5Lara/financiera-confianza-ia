@@ -1,0 +1,6 @@
+variante,casos,tipo
+Recepción de solicitud → Validación de identidad → Verificación documental → Evaluación de capacidad de pago → Evaluación de riesgo → Revisión del analista → Aprobación o rechazo → Comunicación del resultado,634,Conforme
+Recepción de solicitud → Validación de identidad → Verificación documental → Evaluación de capacidad de pago → Aprobación o rechazo → Comunicación del resultado,103,Ruta no autorizada: aprobación anticipada
+Recepción de solicitud → Validación de identidad → Verificación documental → Evaluación de capacidad de pago → Revisión del analista → Aprobación o rechazo → Comunicación del resultado,93,Actividad omitida: evaluación de riesgo
+Recepción de solicitud → Validación de identidad → Verificación documental → Evaluación de capacidad de pago → Evaluación de riesgo → Revisión del analista → Verificación documental → Evaluación de capacidad de pago → Evaluación de riesgo → Revisión del analista → Aprobación o rechazo → Comunicación del resultado,87,Retroceso manual (retrabajo)
+Recepción de solicitud → Validación de identidad → Verificación documental → Evaluación de capacidad de pago → Evaluación de riesgo → Evaluación de riesgo → Revisión del analista → Aprobación o rechazo → Comunicación del resultado,83,Repetición por reasignación

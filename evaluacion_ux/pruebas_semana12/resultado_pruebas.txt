@@ -1,0 +1,60 @@
+PASA  · escritorio · panel: sin desbordamiento horizontal (scrollWidth 1366 ≤ 1366)
+PASA  · escritorio: menú lateral fijo visible y sin navegación inferior
+PASA  · validación: origen y destino iguales se rechazan
+PASA  · estado de carga: se muestran marcadores mientras se consulta
+PASA  · búsqueda TRU1→LIM1 devuelve 3 salida(s)
+PASA  · escritorio · resultados: sin desbordamiento horizontal (scrollWidth 1366 ≤ 1366)
+PASA  · selección del asiento 1
+PASA  · asientos ocupados no se pueden seleccionar
+PASA  · escritorio · mapa de asientos: sin desbordamiento horizontal (scrollWidth 1366 ≤ 1366)
+PASA  · validación del pasajero: 4 campos marcados al enviar vacío
+PASA  · validación: DNI con menos de 8 dígitos
+PASA  · búsqueda de cliente existente completa el formulario
+PASA  · pago con tarjeta: oculta monto en efectivo y pide código de operación
+PASA  · el RUC solo se pide al elegir factura
+PASA  · privacidad: se rechaza un número de tarjeta en el código de operación
+PASA  · cobro confirmado: se muestra el comprobante
+PASA  · reserva creada con cuenta regresiva de vencimiento
+PASA  · listado de boletos incluye las operaciones realizadas
+PASA  · escritorio · boletos: sin desbordamiento horizontal (scrollWidth 1366 ≤ 1366)
+PASA  · anulación exige motivo
+PASA  · estado vacío al no haber coincidencias
+PASA  · clientes: documento enmascarado para el agente
+PASA  · agente de ventas no ve el botón de datos completos
+PASA  · caja: acceso restringido para el agente
+PASA  · caja: el jefe de agencia accede al arqueo
+PASA  · auditoría registra la consulta de datos completos con motivo
+PASA  · auditoría registra la anulación
+PASA  · estado de error con opción de reintento ante falla de conexión
+PASA  · escritorio: sin errores de JavaScript en consola
+PASA  · movil · panel: sin desbordamiento horizontal (scrollWidth 390 ≤ 390)
+PASA  · móvil: menú lateral oculto y navegación inferior visible
+PASA  · móvil: el botón de menú abre el cajón de navegación
+PASA  · móvil: tocar fuera del cajón lo cierra
+PASA  · validación: origen y destino iguales se rechazan
+PASA  · estado de carga: se muestran marcadores mientras se consulta
+PASA  · búsqueda TRU1→LIM1 devuelve 3 salida(s)
+PASA  · movil · resultados: sin desbordamiento horizontal (scrollWidth 390 ≤ 390)
+PASA  · selección del asiento 1
+PASA  · asientos ocupados no se pueden seleccionar
+PASA  · movil · mapa de asientos: sin desbordamiento horizontal (scrollWidth 390 ≤ 390)
+PASA  · validación del pasajero: 4 campos marcados al enviar vacío
+PASA  · validación: DNI con menos de 8 dígitos
+PASA  · búsqueda de cliente existente completa el formulario
+PASA  · pago con tarjeta: oculta monto en efectivo y pide código de operación
+PASA  · el RUC solo se pide al elegir factura
+PASA  · privacidad: se rechaza un número de tarjeta en el código de operación
+PASA  · cobro confirmado: se muestra el comprobante
+PASA  · reserva creada con cuenta regresiva de vencimiento
+PASA  · listado de boletos incluye las operaciones realizadas
+PASA  · movil · boletos: sin desbordamiento horizontal (scrollWidth 390 ≤ 390)
+PASA  · anulación exige motivo
+PASA  · estado vacío al no haber coincidencias
+PASA  · clientes: documento enmascarado para el agente
+PASA  · agente de ventas no ve el botón de datos completos
+PASA  · caja: acceso restringido para el agente
+PASA  · caja: el jefe de agencia accede al arqueo
+PASA  · auditoría registra la consulta de datos completos con motivo
+PASA  · auditoría registra la anulación
+PASA  · estado de error con opción de reintento ante falla de conexión
+PASA  · movil: sin errores de JavaScript en consola

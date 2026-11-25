@@ -1,0 +1,11 @@
+PASA  · T1 · Navegación con Tab (40 pulsaciones desde la carga) · foco inicial main#main "Panel de ventas martes, 24 de "; 37 paradas en 14 elementos distintos; 3 salidas al navegador al completar el ciclo; 0 paradas invisibles; sin trampa de foco
+PASA  · T2 · Foco visible en cada parada de Tab · las 37 paradas muestran contorno de foco (solid 3px)
+PASA  · T3 · Navegación inversa con Shift+Tab · 10 pulsaciones devuelven exactamente las paradas previas en orden inverso
+PASA  · T4 · Enter en "Saltar al contenido principal" · enlace alcanzado con 11 Shift+Tab: a "Saltar al contenido principal"; tras Enter: main#main "Panel de ventas martes, 24 de "
+PASA  · T5 · Enter en el enlace "Vender pasaje" del menú · alcanzado con 7 Shift+Tab; vista de venta visible: true
+PASA  · T6 · Búsqueda y elección de viaje solo con teclado (flechas y Enter) · origen/destino "TRU1 / LIM1"; 2 viajes encontrados; paso visible tras Enter: 2
+PASA  · T7 · Espacio activa el botón de asiento · button "Asiento 1, cama, ventana, S/ 9": aria-pressed="true" tras Espacio
+PASA  · T8 · Enter en "Continuar" y escritura en el formulario · paso visible: 3; campo de nombres alcanzado: true
+PASA  · T9 · Cambio de vista (Venta a Boletos a Venta) solo con teclado · vista Boletos mostrada: true; al volver: paso 3, nombre "Prueba Teclado", asiento 1Cama (antes 1Cama)
+FALLA · T10 · Recarga o cierre con una venta en curso · advertencia antes de salir: no; tras recargar: paso 1, nombre ""
+9 de 10 pruebas cumplidas

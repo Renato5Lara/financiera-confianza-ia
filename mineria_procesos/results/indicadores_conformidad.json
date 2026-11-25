@@ -1,0 +1,44 @@
+[
+ {
+  "escenario": "actual",
+  "casos": 1000,
+  "eventos": 8132,
+  "variantes": 5,
+  "pct_conformes": 63.4,
+  "pct_no_conformes": 36.6,
+  "fitness_alineamientos": 0.9547,
+  "fitness_token_replay": 0.9599,
+  "pct_retrabajo": 17.0,
+  "ciclo_medio_h": 20.7,
+  "ciclo_mediana_h": 17.1,
+  "pct_dentro_24h": 71.8,
+  "desviaciones_por_tipo": {
+   "Conforme": 634,
+   "Ruta no autorizada: aprobación anticipada": 103,
+   "Actividad omitida: evaluación de riesgo": 93,
+   "Retroceso manual (retrabajo)": 87,
+   "Repetición por reasignación": 83
+  }
+ },
+ {
+  "escenario": "mejorado",
+  "casos": 1000,
+  "eventos": 8063,
+  "variantes": 5,
+  "pct_conformes": 91.5,
+  "pct_no_conformes": 8.5,
+  "fitness_alineamientos": 0.9884,
+  "fitness_token_replay": 0.9906,
+  "pct_retrabajo": 4.4,
+  "ciclo_medio_h": 17.8,
+  "ciclo_mediana_h": 15.8,
+  "pct_dentro_24h": 79.5,
+  "desviaciones_por_tipo": {
+   "Conforme": 915,
+   "Retroceso manual (retrabajo)": 27,
+   "Ruta no autorizada: aprobación anticipada": 21,
+   "Actividad omitida: evaluación de riesgo": 20,
+   "Repetición por reasignación": 17
+  }
+ }
+]

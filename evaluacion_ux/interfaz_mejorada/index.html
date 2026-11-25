@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ERP Transportes Horizonte Liberteño — Módulo Ventas y Atención (prototipo funcional con datos simulados)">
+  <title>Ventas y Atención · ERP Horizonte Liberteño</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%230b4f8a%22/%3E%3Ctext x=%2216%22 y=%2221%22 font-size=%2214%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22 font-weight=%22bold%22%3EHL%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- ============ ENCABEZADO ============ -->
+  <header class="topbar" role="banner">
+    <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">HL</span>
+      <div>
+        <strong>Horizonte Liberteño</strong>
+        <small>ERP · Ventas y Atención</small>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <span class="badge-demo" title="Esta interfaz trabaja con datos ficticios en el navegador">Datos simulados</span>
+      <label class="agency-select">
+        <span class="sr-only">Agencia</span>
+        <select id="agencySelect" aria-label="Agencia de trabajo"></select>
+      </label>
+      <div class="user-chip">
+        <span class="avatar" aria-hidden="true" id="userInitials">AP</span>
+        <div class="user-meta">
+          <span id="userName">Ana Prueba</span>
+          <label class="role-switch">
+            <span class="role-demo" title="En producción el rol lo asigna el inicio de sesión; este selector existe solo para la demostración">Rol (demostración)</span>
+            <select id="roleSelect" aria-label="Rol del usuario">
+              <option value="AGENTE_VENTAS">Agente de ventas</option>
+              <option value="JEFE_AGENCIA">Jefe de agencia</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ MENÚ LATERAL (escritorio) ============ -->
+  <nav class="sidebar" id="sidebar" aria-label="Menú principal">
+    <ul>
+      <li><a href="#inicio" data-view="inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Inicio</span></a></li>
+      <li><a href="#venta" data-view="venta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v4a2 2 0 0 0 0 4v4H4v-4a2 2 0 0 0 0-4z"/><path d="M14 7v12"/></svg><span>Vender pasaje</span></a></li>
+      <li><a href="#reservas" data-view="reservas"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg><span>Reservas</span><span class="nav-count" id="navReservas">0</span></a></li>
+      <li><a href="#boletos" data-view="boletos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>Boletos</span></a></li>
+      <li><a href="#clientes" data-view="clientes"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-7 7-7s7 3 7 7M17 11a3 3 0 1 0 0-6M22 21c0-3-2-5-4-6"/></svg><span>Clientes</span></a></li>
+      <li><a href="#caja" data-view="caja"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></svg><span>Cierre de caja</span></a></li>
+      <li><a href="#privacidad" data-view="privacidad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Privacidad y auditoría</span></a></li>
+    </ul>
+    <p class="sidebar-note">Prototipo académico. No registra datos reales.</p>
+  </nav>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main id="main" tabindex="-1">
+
+    <!-- INICIO / PANEL -->
+    <section class="view" id="view-inicio" aria-labelledby="h-inicio">
+      <div class="view-head">
+        <div>
+          <h1 id="h-inicio">Panel de ventas</h1>
+          <p class="muted" id="todayLabel"></p>
+        </div>
+        <a class="btn btn-primary" href="#venta">+ Nueva venta</a>
+      </div>
+      <div class="kpis" id="kpis" aria-live="polite"></div>
+      <div class="grid-2">
+        <article class="card">
+          <header class="card-head"><h2>Próximas salidas</h2><a href="#venta" class="link">Vender</a></header>
+          <div id="nextTrips"></div>
+        </article>
+        <article class="card">
+          <header class="card-head"><h2>Reservas por vencer</h2><a href="#reservas" class="link">Ver todas</a></header>
+          <div id="expiringList"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- VENTA DE PASAJES (asistente) -->
+    <section class="view" id="view-venta" aria-labelledby="h-venta" hidden>
+      <div class="view-head">
+        <div>
+          <h1 id="h-venta">Vender o reservar pasaje</h1>
+          <p class="muted">Busque el viaje, elija el asiento, registre al pasajero y cobre o reserve.</p>
+        </div>
+      </div>
+      <ol class="stepper" id="stepper" aria-label="Pasos de la venta">
+        <li data-step="1" class="active"><span>1</span><em>Viaje</em></li>
+        <li data-step="2"><span>2</span><em>Asiento</em></li>
+        <li data-step="3"><span>3</span><em>Pasajero</em></li>
+        <li data-step="4"><span>4</span><em>Pago</em></li>
+      </ol>
+
+      <!-- Paso 1 -->
+      <div class="step-panel" data-panel="1">
+        <form class="card form-inline" id="searchForm" novalidate>
+          <div class="field">
+            <label for="fOrigen">Origen</label>
+            <select id="fOrigen" required></select>
+          </div>
+          <div class="field">
+            <label for="fDestino">Destino</label>
+            <select id="fDestino" required></select>
+          </div>
+          <div class="field">
+            <label for="fFecha">Fecha de viaje</label>
+            <input type="date" id="fFecha" required>
+          </div>
+          <div class="field field-btn">
+            <button type="submit" class="btn btn-primary">Buscar viajes</button>
+          </div>
+          <p class="field-error span-all" id="searchError" role="alert"></p>
+        </form>
+        <div id="tripResults" aria-live="polite"></div>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="step-panel" data-panel="2" hidden>
+        <div class="card">
+          <header class="card-head">
+            <h2 id="seatTitle">Elegir asiento</h2>
+            <button class="btn btn-ghost" data-back="1">← Cambiar viaje</button>
+          </header>
+          <div class="seat-layout">
+            <div>
+              <div class="seat-legend" aria-hidden="true">
+                <span><i class="seat-dot free"></i>Libre</span>
+                <span><i class="seat-dot taken"></i>Ocupado (rayado)</span>
+                <span><i class="seat-dot reserved"></i>Reservado (punteado)</span>
+                <span><i class="seat-dot selected"></i>Seleccionado</span>
+              </div>
+              <div class="bus" id="seatMap" role="group" aria-label="Mapa de asientos"></div>
+            </div>
+            <aside class="summary" id="seatSummary" aria-live="polite"></aside>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="step-panel" data-panel="3" hidden>
+        <form class="card" id="paxForm" novalidate>
+          <header class="card-head">
+            <h2>Datos del pasajero</h2>
+            <button type="button" class="btn btn-ghost" data-back="2">← Cambiar asiento</button>
+          </header>
+          <p class="muted small">Solo se piden los datos necesarios para emitir el boleto y elaborar el manifiesto de pasajeros. Los campos con * son obligatorios.</p>
+          <div class="form-grid">
+            <div class="field">
+              <label for="pTipoDoc">Tipo de documento *</label>
+              <select id="pTipoDoc" required>
+                <option value="DNI">DNI</option>
+                <option value="CE">Carné de extranjería</option>
+                <option value="PAS">Pasaporte</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="pNumDoc">Número de documento *</label>
+              <div class="input-action">
+                <input id="pNumDoc" inputmode="numeric" autocomplete="off" required aria-describedby="pNumDocHelp pNumDocErr">
+                <button type="button" class="btn btn-ghost btn-sm" id="btnBuscarCliente">Buscar</button>
+              </div>
+              <small id="pNumDocHelp" class="help">DNI: 8 dígitos. Si el pasajero ya existe, se completan sus datos.</small>
+              <span class="field-error" id="pNumDocErr"></span>
+            </div>
+            <div class="field">
+              <label for="pNombres">Nombres *</label>
+              <input id="pNombres" autocomplete="off" required aria-describedby="pNombresErr">
+              <span class="field-error" id="pNombresErr"></span>
+            </div>
+            <div class="field">
+              <label for="pApellidos">Apellidos *</label>
+              <input id="pApellidos" autocomplete="off" required aria-describedby="pApellidosErr">
+              <span class="field-error" id="pApellidosErr"></span>
+            </div>
+            <div class="field">
+              <label for="pTelefono">Teléfono (opcional)</label>
+              <input id="pTelefono" inputmode="tel" placeholder="+51 9XXXXXXXX" aria-describedby="pTelefonoErr">
+              <span class="field-error" id="pTelefonoErr"></span>
+            </div>
+            <div class="field">
+              <label for="pCorreo">Correo (opcional, para enviar el comprobante)</label>
+              <input id="pCorreo" type="email" inputmode="email" aria-describedby="pCorreoErr">
+              <span class="field-error" id="pCorreoErr"></span>
+            </div>
+          </div>
+          <fieldset class="consent">
+            <legend>Tratamiento de datos personales</legend>
+            <label class="check">
+              <input type="checkbox" id="pAviso" required>
+              <span>El pasajero fue informado del <button type="button" class="link-btn" data-open="privacyModal">aviso de privacidad</button> (finalidad: venta del pasaje y manifiesto). *</span>
+            </label>
+            <label class="check">
+              <input type="checkbox" id="pPromo">
+              <span>Acepta recibir promociones por correo o mensaje (opcional; no condiciona la compra).</span>
+            </label>
+            <span class="field-error" id="pAvisoErr"></span>
+          </fieldset>
+          <div class="actions">
+            <button type="submit" class="btn btn-primary">Continuar al pago</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Paso 4 -->
+      <div class="step-panel" data-panel="4" hidden>
+        <div class="grid-2 pay-grid">
+          <form class="card" id="payForm" novalidate>
+            <header class="card-head">
+              <h2>Pago y comprobante</h2>
+              <button type="button" class="btn btn-ghost" data-back="3">← Datos del pasajero</button>
+            </header>
+            <fieldset class="segmented" aria-describedby="medioHelp">
+              <legend>Medio de pago *</legend>
+              <label><input type="radio" name="medio" value="EFECTIVO" checked><span>Efectivo</span></label>
+              <label><input type="radio" name="medio" value="TARJETA"><span>Tarjeta</span></label>
+              <label><input type="radio" name="medio" value="BILLETERA"><span>Billetera</span></label>
+            </fieldset>
+            <small id="medioHelp" class="help">Con tarjeta o billetera se registra solo el código de operación de la pasarela; nunca el número de tarjeta.</small>
+            <div class="form-grid">
+              <div class="field" id="refField" hidden>
+                <label for="payRef">Código de operación *</label>
+                <input id="payRef" autocomplete="off" aria-describedby="payRefErr">
+                <span class="field-error" id="payRefErr"></span>
+              </div>
+              <div class="field" id="cashField">
+                <label for="payCash">Monto recibido (S/) *</label>
+                <input id="payCash" type="number" step="0.10" min="0" inputmode="decimal" aria-describedby="payCashErr payChange">
+                <span class="field-error" id="payCashErr"></span>
+                <small class="help" id="payChange"></small>
+              </div>
+              <div class="field">
+                <label for="payTipoComp">Comprobante *</label>
+                <select id="payTipoComp">
+                  <option value="BOLETO_VIAJE">Boleto de viaje</option>
+                  <option value="FACTURA">Factura (requiere RUC)</option>
+                </select>
+              </div>
+              <div class="field" id="rucField" hidden>
+                <label for="payRuc">RUC del adquiriente *</label>
+                <input id="payRuc" inputmode="numeric" maxlength="11" aria-describedby="payRucErr">
+                <span class="field-error" id="payRucErr"></span>
+              </div>
+            </div>
+            <div class="actions split">
+              <button type="button" class="btn btn-secondary" id="btnReservar">Solo reservar (15 min)</button>
+              <button type="submit" class="btn btn-primary" id="btnCobrar">Cobrar y emitir</button>
+            </div>
+          </form>
+          <aside class="card summary" id="paySummary" aria-live="polite"></aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESERVAS -->
+    <section class="view" id="view-reservas" aria-labelledby="h-reservas" hidden>
+      <div class="view-head">
+        <div><h1 id="h-reservas">Reservas</h1><p class="muted">El asiento se libera automáticamente al vencer el plazo de la reserva.</p></div>
+      </div>
+      <div id="reservasList" class="list" aria-live="polite"></div>
+    </section>
+
+    <!-- BOLETOS -->
+    <section class="view" id="view-boletos" aria-labelledby="h-boletos" hidden>
+      <div class="view-head">
+        <div><h1 id="h-boletos">Boletos</h1><p class="muted">Consulte, reimprima o anule boletos emitidos.</p></div>
+      </div>
+      <div class="card toolbar">
+        <div class="field grow">
+          <label for="bSearch">Buscar</label>
+          <input id="bSearch" type="search" placeholder="N.° de boleto, pasajero o documento">
+        </div>
+        <div class="field">
+          <label for="bEstado">Estado</label>
+          <select id="bEstado">
+            <option value="">Todos</option>
+            <option>VENDIDO</option><option>RESERVADO</option><option>EMBARCADO</option><option>ANULADO</option>
+          </select>
+        </div>
+      </div>
+      <div id="boletosTable" aria-live="polite"></div>
+    </section>
+
+    <!-- CLIENTES -->
+    <section class="view" id="view-clientes" aria-labelledby="h-clientes" hidden>
+      <div class="view-head">
+        <div><h1 id="h-clientes">Clientes</h1><p class="muted">Los datos de contacto se muestran enmascarados para proteger al pasajero.</p></div>
+        <button class="btn btn-primary" id="btnNuevoCliente">+ Nuevo cliente</button>
+      </div>
+      <div class="card toolbar">
+        <div class="field grow">
+          <label for="cSearch">Buscar cliente</label>
+          <input id="cSearch" type="search" placeholder="Documento o nombre">
+        </div>
+      </div>
+      <div id="clientesTable" aria-live="polite"></div>
+    </section>
+
+    <!-- CAJA -->
+    <section class="view" id="view-caja" aria-labelledby="h-caja" hidden>
+      <div class="view-head">
+        <div><h1 id="h-caja">Cierre de caja</h1><p class="muted">Arqueo y cierre del día. Disponible para el jefe de agencia.</p></div>
+      </div>
+      <div id="cajaContent"></div>
+    </section>
+
+    <!-- PRIVACIDAD Y AUDITORÍA -->
+    <section class="view" id="view-privacidad" aria-labelledby="h-priv" hidden>
+      <div class="view-head">
+        <div><h1 id="h-priv">Privacidad y auditoría</h1><p class="muted">Medidas de protección y registro de las acciones sobre datos personales.</p></div>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <header class="card-head"><h2>Medidas activas en este módulo</h2></header>
+          <ul class="checklist">
+            <li>Documento y teléfono enmascarados en listados.</li>
+            <li>Ver datos completos exige indicar un motivo y queda registrado.</li>
+            <li>Consentimiento para promociones separado y opcional.</li>
+            <li>Sin campos de número de tarjeta: solo código de operación.</li>
+            <li>Anular un boleto exige motivo; nada se borra físicamente.</li>
+            <li>Acciones sensibles limitadas por rol.</li>
+          </ul>
+          <button class="btn btn-secondary" data-open="privacyModal">Ver aviso de privacidad</button>
+        </article>
+        <article class="card">
+          <header class="card-head"><h2>Registro de auditoría</h2><span class="muted small" id="auditCount"></span></header>
+          <div id="auditLog" class="audit"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ NAVEGACIÓN INFERIOR (móvil) ============ -->
+  <nav class="bottom-nav" aria-label="Navegación rápida">
+    <a href="#inicio" data-view="inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Inicio</span></a>
+    <a href="#venta" data-view="venta" class="fab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Vender</span></a>
+    <a href="#reservas" data-view="reservas"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/></svg><span>Reservas</span></a>
+    <a href="#boletos" data-view="boletos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8"/></svg><span>Boletos</span></a>
+  </nav>
+
+  <!-- ============ DIÁLOGOS ============ -->
+  <dialog id="privacyModal" aria-labelledby="privTitle">
+    <form method="dialog" class="modal">
+      <h2 id="privTitle">Aviso de privacidad (resumen)</h2>
+      <p><strong>Responsable:</strong> Transportes Horizonte Liberteño S.A.C. (empresa ficticia, uso académico).</p>
+      <p><strong>Finalidad:</strong> emitir el boleto y el comprobante, elaborar el manifiesto de pasajeros exigido para el viaje y atender reclamos.</p>
+      <p><strong>Datos tratados:</strong> tipo y número de documento, nombres y apellidos; teléfono y correo solo si el pasajero los entrega.</p>
+      <p><strong>Promociones:</strong> solo con consentimiento expreso y separado; puede retirarse en cualquier momento.</p>
+      <p><strong>Derechos:</strong> acceso, rectificación, cancelación y oposición conforme a la Ley N.° 29733 y su reglamento.</p>
+      <div class="actions"><button class="btn btn-primary" value="ok">Entendido</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="confirmModal" aria-labelledby="confirmTitle">
+    <form method="dialog" class="modal" id="confirmForm">
+      <h2 id="confirmTitle">Confirmar</h2>
+      <p id="confirmText"></p>
+      <div class="field" id="confirmReasonField" hidden>
+        <label for="confirmReason">Motivo *</label>
+        <textarea id="confirmReason" rows="3" aria-describedby="confirmReasonErr"></textarea>
+        <span class="field-error" id="confirmReasonErr"></span>
+      </div>
+      <div class="actions split">
+        <button class="btn btn-ghost" value="cancel" formnovalidate>Cancelar</button>
+        <button class="btn btn-danger" value="ok" id="confirmOk">Confirmar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="clienteModal" aria-labelledby="clienteTitle">
+    <form class="modal" id="clienteForm" novalidate>
+      <h2 id="clienteTitle">Cliente</h2>
+      <div class="form-grid">
+        <div class="field">
+          <label for="cTipoDoc">Tipo de documento *</label>
+          <select id="cTipoDoc"><option>DNI</option><option>CE</option><option>PAS</option><option>RUC</option></select>
+        </div>
+        <div class="field">
+          <label for="cNumDoc">Número *</label>
+          <input id="cNumDoc" inputmode="numeric" aria-describedby="cNumDocErr">
+          <span class="field-error" id="cNumDocErr"></span>
+        </div>
+        <div class="field span-all">
+          <label for="cNombre" id="cNombreLabel">Nombres y apellidos *</label>
+          <input id="cNombre" aria-describedby="cNombreErr">
+          <span class="field-error" id="cNombreErr"></span>
+        </div>
+        <div class="field">
+          <label for="cTelefono">Teléfono</label>
+          <input id="cTelefono" inputmode="tel" placeholder="+51 9XXXXXXXX" aria-describedby="cTelefonoErr">
+          <span class="field-error" id="cTelefonoErr"></span>
+        </div>
+        <div class="field">
+          <label for="cCorreo">Correo</label>
+          <input id="cCorreo" type="email" aria-describedby="cCorreoErr">
+          <span class="field-error" id="cCorreoErr"></span>
+        </div>
+      </div>
+      <div class="actions split">
+        <button type="button" class="btn btn-ghost" id="clienteCancel">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="receiptModal" aria-labelledby="receiptTitle">
+    <div class="modal receipt" id="receiptBody"></div>
+  </dialog>
+
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

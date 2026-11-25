@@ -1,0 +1,79 @@
+{
+ "sentimiento_por_candidatura": {
+  "Keiko Fujimori (Fuerza Popular)": {
+   "NEU": 0.671,
+   "NEG": 0.323,
+   "POS": 0.006
+  },
+  "Roberto Sánchez (Juntos por el Perú)": {
+   "NEU": 0.727,
+   "NEG": 0.23,
+   "POS": 0.043
+  },
+  "Rafael López Aliaga (Renovación Popular)": {
+   "NEG": 0.672,
+   "NEU": 0.328
+  }
+ },
+ "publicaciones_una_sola_candidatura": 723,
+ "primera_vuelta": {
+  "Keiko Fujimori (Fuerza Popular)": {
+   "A_menciones_%": 66.7,
+   "B_positivas_%": 0.0,
+   "C_no_negativas_%": 66.7,
+   "oficial_normalizado_3_%": 41.8,
+   "menciones": 26
+  },
+  "Roberto Sánchez (Juntos por el Perú)": {
+   "A_menciones_%": 12.8,
+   "B_positivas_%": 0.0,
+   "C_no_negativas_%": 14.8,
+   "oficial_normalizado_3_%": 29.3,
+   "menciones": 5
+  },
+  "Rafael López Aliaga (Renovación Popular)": {
+   "A_menciones_%": 20.5,
+   "B_positivas_%": 0.0,
+   "C_no_negativas_%": 18.5,
+   "oficial_normalizado_3_%": 29.0,
+   "menciones": 8
+  }
+ },
+ "segunda_vuelta_ventana": "2026-05-24 a 2026-06-06 (Lima)",
+ "segunda_vuelta_n": 95,
+ "segunda_vuelta": {
+  "Keiko Fujimori (Fuerza Popular)": {
+   "A_menciones_%": 74.7,
+   "B_positivas_%": 100.0,
+   "C_no_negativas_%": 67.9,
+   "oficial_%": 50.135,
+   "menciones": 71,
+   "pos": 1,
+   "neg": 33,
+   "IC95_A_menciones_%": [
+    65.3,
+    83.2
+   ],
+   "error_pp_A_menciones_%": 24.6,
+   "IC95_B_positivas_%": [
+    0.0,
+    100.0
+   ],
+   "error_pp_B_positivas_%": 49.9,
+   "IC95_C_no_negativas_%": [
+    55.8,
+    80.4
+   ],
+   "error_pp_C_no_negativas_%": 17.8
+  },
+  "Roberto Sánchez (Juntos por el Perú)": {
+   "A_menciones_%": 25.3,
+   "B_positivas_%": 0.0,
+   "C_no_negativas_%": 32.1,
+   "oficial_%": 49.865,
+   "menciones": 24,
+   "pos": 0,
+   "neg": 6
+  }
+ }
+}

@@ -1,0 +1,3 @@
+grupo,n,tasa_pred_incumple,tasa_real_incumple
+25 o más,202,0.634,0.248
+menor de 25,48,0.792,0.521

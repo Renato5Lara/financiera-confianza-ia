@@ -1,0 +1,17 @@
+PASA  · Eficiencia de desempeño · comportamiento temporal (carga local) · DOMContentLoaded=67 ms, load=67 ms
+PASA  · Eficiencia de desempeño · utilización de recursos · 98.9 KB en 4 archivos; sin bibliotecas externas
+PASA  · Accesibilidad automática (axe-core, WCAG 2.2 A/AA) · panel · sin infracciones
+PASA  · Capacidad de interacción · operabilidad con teclado · foco inicial en "#main"; primer Tab: "+ Nueva venta"
+FALLA · Capacidad de interacción · autodescriptividad (sin jerga técnica en pantalla) · 6 subtítulos muestran códigos de requisitos: "RF-002 a RF-004, RF-008 y RF-009 · Proceso P01"
+FALLA · Capacidad de interacción · legibilidad del mapa de asientos · texto secundario del asiento = 9.9 px
+FALLA · Capacidad de interacción · inclusividad (estado no depende solo del color) · ocupado y reservado se distinguen solo por color
+PASA  · Capacidad de interacción · protección contra errores del usuario (venta en curso) · al volver: paso 3, nombre "Prueba"
+PASA  · Adecuación funcional · corrección (validación de datos obligatorios) · 4 mensajes de error; foco en "pNumDoc"
+PASA  · Accesibilidad automática (axe-core, WCAG 2.2 A/AA) · formulario de pasajero con errores · sin infracciones
+FALLA · Seguridad · autenticidad y control de acceso (cambio de rol) · cualquier usuario puede cambiar a Jefe de agencia desde el encabezado
+PASA  · Fiabilidad · tolerancia a fallos (falla simulada de conexión) · mensaje de error con opción de reintento
+PASA  · Fiabilidad · ausencia de fallos (errores de JavaScript) · 0 errores en consola
+PASA  · Flexibilidad · adaptabilidad (sin desbordamiento horizontal en 390 px) · scrollWidth=390
+FALLA · Capacidad de interacción · objetivos táctiles ≥ 24 px (WCAG 2.2, 2.5.8) · chkFalla 22x22
+FALLA · Accesibilidad automática (axe-core, WCAG 2.2 A/AA) · móvil · mapa de asientos · [{"id":"aria-valid-attr-value","impacto":"critical","nodos":40}]
+10 de 16 criterios cumplidos

@@ -1,0 +1,4 @@
+{"id": "SOL-001", "estado": "evaluada", "modelo": "Random Forest", "probabilidad_incumplimiento": 0.116, "categoria_riesgo": "Bajo", "requiere_revision_reforzada": false, "nota": "Recomendación de apoyo; la decisión crediticia la toma un analista autorizado."}
+{"id": "SOL-002", "estado": "evaluada", "modelo": "Random Forest", "probabilidad_incumplimiento": 0.392, "categoria_riesgo": "Medio", "requiere_revision_reforzada": true, "nota": "Recomendación de apoyo; la decisión crediticia la toma un analista autorizado."}
+{"id": "SOL-003", "estado": "evaluada", "modelo": "Random Forest", "probabilidad_incumplimiento": 0.24, "categoria_riesgo": "Medio", "requiere_revision_reforzada": true, "nota": "Recomendación de apoyo; la decisión crediticia la toma un analista autorizado."}
+{"id": "SOL-004", "estado": "rechazada_por_validacion", "campos_faltantes": ["monto_credito"]}

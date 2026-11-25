@@ -1,0 +1,86 @@
+[
+ {
+  "modo": "escritorio",
+  "vista": "inicio",
+  "v": [],
+  "pases": 25
+ },
+ {
+  "modo": "escritorio",
+  "vista": "venta",
+  "v": [],
+  "pases": 26
+ },
+ {
+  "modo": "escritorio",
+  "vista": "reservas",
+  "v": [],
+  "pases": 25
+ },
+ {
+  "modo": "escritorio",
+  "vista": "boletos",
+  "v": [],
+  "pases": 28
+ },
+ {
+  "modo": "escritorio",
+  "vista": "clientes",
+  "v": [],
+  "pases": 28
+ },
+ {
+  "modo": "escritorio",
+  "vista": "caja",
+  "v": [],
+  "pases": 25
+ },
+ {
+  "modo": "escritorio",
+  "vista": "privacidad",
+  "v": [],
+  "pases": 26
+ },
+ {
+  "modo": "movil",
+  "vista": "inicio",
+  "v": [],
+  "pases": 24
+ },
+ {
+  "modo": "movil",
+  "vista": "venta",
+  "v": [],
+  "pases": 25
+ },
+ {
+  "modo": "movil",
+  "vista": "reservas",
+  "v": [],
+  "pases": 25
+ },
+ {
+  "modo": "movil",
+  "vista": "boletos",
+  "v": [],
+  "pases": 28
+ },
+ {
+  "modo": "movil",
+  "vista": "clientes",
+  "v": [],
+  "pases": 27
+ },
+ {
+  "modo": "movil",
+  "vista": "caja",
+  "v": [],
+  "pases": 24
+ },
+ {
+  "modo": "movil",
+  "vista": "privacidad",
+  "v": [],
+  "pases": 24
+ }
+]

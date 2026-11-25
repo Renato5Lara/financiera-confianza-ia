@@ -1,0 +1,4 @@
+pm4py>=2.7
+pandas>=2.2
+matplotlib>=3.8
+# Graphviz del sistema es necesario para las imágenes de PM4Py (apt install graphviz / choco install graphviz)

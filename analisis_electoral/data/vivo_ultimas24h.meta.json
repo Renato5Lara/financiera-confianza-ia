@@ -1,0 +1,18 @@
+{
+ "fuente": "https://api.bsky.app/xrpc/app.bsky.feed.searchPosts",
+ "modo": "vivo",
+ "extraccion_utc": "2026-11-24T23:48:47+00:00",
+ "desde": "2026-03-15",
+ "hasta": "2026-06-14",
+ "consultas": {
+  "Keiko Fujimori": 2,
+  "Fujimori": 2,
+  "Roberto Sánchez": 2,
+  "Juntos por el Perú": 1,
+  "Fuerza Popular": 1,
+  "López Aliaga": 1,
+  "elecciones Perú": 2,
+  "segunda vuelta Perú": 1
+ },
+ "registros_brutos": 10
+}
